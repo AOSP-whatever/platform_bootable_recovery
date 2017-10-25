@@ -48,7 +48,8 @@ updater_common_static_libraries := \
     libcrypto_static \
     libcrypto_utils \
     libcutils \
-    libutils
+    libutils \
+    libziparchive
 
 
 # Each library in TARGET_RECOVERY_UPDATER_LIBS should have a function
@@ -65,7 +66,6 @@ define generate-register-inc
     $(hide) $(foreach lib,$(2),echo "  Register_$(lib)();" >> $(1);)
     $(hide) echo "}" >> $(1)
 endef
-
 
 # updater (static executable)
 # ===============================
